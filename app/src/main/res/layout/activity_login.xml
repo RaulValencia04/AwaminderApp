@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="250dp"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#45c2f4"
+            android:text="Bienvenido de vuelta !!!"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <LinearLayout
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:id="@+id/TVnombre"
+                android:textStyle="italic"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:text="Nombre"/>
+            <EditText
+                android:id="@+id/ETnombre"
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/ingrese_su_nombre"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/TVcontrasenia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="italic"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:text="@string/contrase_a"/>
+            <EditText
+                android:id="@+id/ETcontrasenia"
+                android:layout_width="match_parent"
+                android:hint="@string/ingrese_su_contrase_a"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnIniciarSesion"
+                android:layout_marginTop="40dp"
+                android:layout_width="185dp"
+                android:layout_height="49dp"
+                android:onClick="validar"
+                android:layout_gravity="center"
+                android:text="@string/ingresar"
+                android:background="@drawable/round_corner_button"/>
+
+
+            <Button
+                android:id="@+id/TVcrearcuenta"
+                android:layout_width="200dp"
+                android:layout_height="49dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:onClick="cambiarIngre"
+                android:text="@string/crear_cuenta"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AwaMinder</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="ingrese_su_contrase_a">ingrese su contraseña</string>
+    <string name="ingrese_su_nombre">ingrese su nombre</string>
+</resources>
