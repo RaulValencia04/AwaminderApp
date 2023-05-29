@@ -58,6 +58,8 @@ public class Calcular extends AppCompatActivity {
 
 
                 values.put("meta", meta);
+                values.put("logrado", meta);
+
 
                 String whereClause = "nombre = ?";
                 String[] whereArgs = {nombre};

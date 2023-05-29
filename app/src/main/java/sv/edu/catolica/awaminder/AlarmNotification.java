@@ -82,14 +82,14 @@ public class AlarmNotification extends Service {
             builder.setSmallIcon(android.R.drawable.presence_away);
             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.img_2));
             builder.setContentTitle("AwaMinder");
-            builder.setContentText("Hora de tomar agua bebe "+obtenerUsuarioLogueado());
+            builder.setContentText("Hora de tomar agua "+obtenerUsuarioLogueado());
             builder.setColor(Color.BLUE);
             builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
             builder.setLights(Color.MAGENTA, 1000, 1000);
             builder.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
             builder.setDefaults(Notification.DEFAULT_SOUND);
 
-            Intent notificationIntent = new Intent(this, plan.class);
+            Intent notificationIntent = new Intent(this, Meta.class);
             notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
 
