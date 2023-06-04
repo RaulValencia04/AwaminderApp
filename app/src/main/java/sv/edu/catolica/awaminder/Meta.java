@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-public class Meta extends AppCompatActivity {
+public class Meta extends  BaseActivity {
 
     private ImageView bottleImageView;
     private Button decreaseButton;
@@ -28,6 +28,8 @@ public class Meta extends AppCompatActivity {
     private DbAdmin dbAdmin;
     private AlertDialog alertDialog;
     private Handler handler;
+    float meta;
+    float nuevaLogrado;
     private static final long DIALOG_DELAY = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class Meta extends AppCompatActivity {
         bottleImageView = findViewById(R.id.imgbotella);
         decreaseButton = findViewById(R.id.btnbajar);
         currentWaterLevel = 100;
+        meta = 0;
+        nuevaLogrado=0;
         dbAdmin  = new DbAdmin(Meta.this,"AwaMinder",null,1);
 
 
@@ -67,14 +71,14 @@ public class Meta extends AppCompatActivity {
             // Verificar si las columnas existen en el cursor
             if (logradoColumnIndex != -1 && metaColumnIndex != -1) {
                 float logrado = cursor.getFloat(logradoColumnIndex);
-                float meta = cursor.getFloat(metaColumnIndex);
+                meta = cursor.getFloat(metaColumnIndex);
 
                 // Realizar los cálculos y actualizaciones necesarias
-                float nuevaLogrado = logrado - (meta * 0.1f);
+                nuevaLogrado = logrado - (meta * 0.1f);
                 if (nuevaLogrado < 0) {
                     nuevaLogrado = 0;
                 }
-
+                updateBottleImage(meta,nuevaLogrado);
                 // Formatear los valores con dos decimales
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String tomaCantidad = decimalFormat.format(meta * 0.1f);

@@ -22,8 +22,14 @@ public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if (obtenerUsuarioLogueadoBool()) {
+            // Si hay un nombre de usuario, iniciar la actividad Meta
+            iniciarActividadMeta();
+        }
 
         etNombre = findViewById(R.id.ETnombre);
         etContrasenia = findViewById(R.id.ETcontrasenia);
@@ -59,8 +65,6 @@ public class login extends AppCompatActivity {
 
 
         try {
-
-
             String nombre = etNombre.getText().toString();
             String contrasenia = etContrasenia.getText().toString();
 
@@ -68,15 +72,10 @@ public class login extends AppCompatActivity {
             if (autenticarUsuario(nombre, contrasenia)) {
                 // Inicio de sesión exitoso
                 Toast.makeText(login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-
                 guardarUsuarioLogueado(nombre);
-
-
                 Intent intent = new Intent(this, plan.class);
-
                 // Iniciar la nueva actividad
                 startService(new Intent(login.this, AlarmNotification.class));
-
                 startActivity(intent);
                 finish();
             } else {
@@ -99,8 +98,16 @@ public class login extends AppCompatActivity {
         editor.apply();
     }
 
-
-
+    public boolean obtenerUsuarioLogueadoBool() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MiArchivoPref", Context.MODE_PRIVATE);
+        String nombreUsuario = sharedPreferences.getString("usuarioLogueado", "");
+        return !nombreUsuario.isEmpty();
+    }
+    private void iniciarActividadMeta() {
+        Intent intent = new Intent(login.this, Meta.class);
+        startActivity(intent);
+        finish(); // Cerrar la actividad actual para que no se pueda volver atrás al inicio de sesión
+    }
     public void cambiarIngre(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

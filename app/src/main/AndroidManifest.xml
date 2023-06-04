@@ -27,13 +27,16 @@
         </activity>
 
         <activity
+            android:name=".Calcular_Perzonalizado"
+            android:exported="false" />
+        <activity
             android:name=".Meta"
             android:exported="false" />
 
         <service
             android:name=".AlarmNotification"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".Calcular"
@@ -45,7 +48,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"></activity>
+
+        
 
     </application>
 
