@@ -21,4 +21,21 @@ public class plan extends AppCompatActivity {
         // Iniciar la nueva actividad
         startActivity(intent);
     }
+
+    public void planP(View view) {
+        Intent intent = new Intent(this, Calcular_Perzonalizado.class);
+
+        // Iniciar la nueva actividad
+        startActivity(intent);
+
+
+    }
+
+    public void oldplan(View view) {
+        Intent intent = new Intent(this, Meta.class);
+
+        // Iniciar la nueva actividad
+        startActivity(intent);
+
+    }
 }
