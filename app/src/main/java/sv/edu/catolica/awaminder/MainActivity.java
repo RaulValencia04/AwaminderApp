@@ -32,7 +32,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText contrasenia, nombre, correo;
+    private EditText contrasenia, nombre;
     private TextView ET;
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         contrasenia = findViewById(R.id.ETcontrasenia);
-        correo = findViewById(R.id.ETcorreo);
         nombre = findViewById(R.id.ETnombre);
         miBoton = findViewById(R.id.btnGuardar);
 //        startService(new Intent(MainActivity.this, AlarmNotification.class));
@@ -102,24 +101,19 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase DB = admin.getWritableDatabase();
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre.getText().toString());
-        usuario.setCorreo(correo.getText().toString());
         usuario.setContraseña(contrasenia.getText().toString());
         usuario.setPeso(0);
         usuario.setDiasSinFallar(0);
 
         String nombreText = nombre.getText().toString();
-        String correoText = correo.getText().toString();
         String contraseniaText = contrasenia.getText().toString();
 
-        if (nombreText.isEmpty() || correoText.isEmpty() || contraseniaText.isEmpty()) {
+        if (nombreText.isEmpty()  || contraseniaText.isEmpty()) {
             Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_LONG).show();
             return; // Agrega esta línea para salir del método en caso de campos vacíos
         }
 
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(correoText).matches()) {
-            Toast.makeText(this, "Formato de correo inválido", Toast.LENGTH_LONG).show();
-            return; // Agrega esta línea para salir del método en caso de formato de correo inválido
-        }
+
 
         ContentValues values = new ContentValues();
         values.put("nombre", usuario.getNombre());
@@ -129,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
         long resultado = DB.insert("Usuario", null, values);
         DB.close();
         nombre.setText("");
-        correo.setText("");
         contrasenia.setText("");
 
         Toast.makeText(this, "Se cargaron los datos en la base", Toast.LENGTH_SHORT).show();

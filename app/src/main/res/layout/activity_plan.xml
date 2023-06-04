@@ -7,13 +7,16 @@
     android:orientation="vertical"
     tools:context=".plan">
     <TextView
-        android:layout_width="300dp"
-        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:textSize="33sp"
+        android:layout_marginTop="80dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:layout_gravity="center_horizontal"
-        android:text="Escoge tu plan!!"/>
+        android:text="Escoge tu plan!!"
+        android:textStyle="bold"/>
 
 
 
@@ -27,20 +30,28 @@
             android:id="@+id/miplan"
             android:layout_width="200dp"
             android:layout_gravity="center"
+            android:textColor="@color/black"
             android:layout_height="75dp"
             android:text="mi propio plan"
+            android:background="@drawable/roundedbutton"
             android:layout_margin="20dp"/>
         <Button
             android:id="@+id/recomendado"
             android:layout_width="200dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_height="75dp"
             android:layout_margin="20dp"
-            android:background="@color/rosa"
+            android:background="@drawable/roundedbutton"
             android:onClick="recomendado"
             android:text="plan recomendado"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondoplan"
+        >
 
     </LinearLayout>
 
