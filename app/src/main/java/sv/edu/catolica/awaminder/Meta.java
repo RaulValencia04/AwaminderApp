@@ -53,7 +53,6 @@ public class Meta extends  BaseActivity {
         });
 
     }
-
     private void decreaseWaterLevel() {
         // Obtener el nombre de usuario guardado en SharedPreferences
         String nombreUsuario = obtenerUsuarioLogueado();
@@ -78,7 +77,7 @@ public class Meta extends  BaseActivity {
                 if (nuevaLogrado < 0) {
                     nuevaLogrado = 0;
                 }
-                updateBottleImage(meta,nuevaLogrado);
+                updateBottleImage(meta, nuevaLogrado);
                 // Formatear los valores con dos decimales
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String tomaCantidad = decimalFormat.format(meta * 0.1f);
@@ -88,7 +87,7 @@ public class Meta extends  BaseActivity {
                 ContentValues values = new ContentValues();
                 values.put("logrado", nuevaLogrado);
                 db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
-//                Toast.makeText(Meta.this, "Toma " + tomaCantidad + " de " + meta, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Meta.this, "Toma " + tomaCantidad + " de " + meta, Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("TOMA " + tomaCantidad + "ML")
@@ -113,22 +112,19 @@ public class Meta extends  BaseActivity {
 
                 }
 
-                updateBottleImage(meta,nuevaLogrado);
+                updateBottleImage(meta, nuevaLogrado);
             }
         }
 
-        // Cerrar el cursor y la conexión a la base de datos
+        // Cerrar el cursor
         cursor.close();
+
+        // Cerrar la conexión a la base de datos después de realizar todas las operaciones necesarias
         db.close();
+        Intent intent = new Intent(this, logros.class);
+        startActivity(intent);
     }
 
-
-    // Método para ocultar el cuadro de diálogo
-    private void dismissDialog() {
-        if (alertDialog != null && alertDialog.isShowing()) {
-            alertDialog.dismiss();
-        }
-    }
     private void actualizarDiasRecord() {
         // Obtener el nombre de usuario guardado en SharedPreferences
         String nombreUsuario = obtenerUsuarioLogueado();
@@ -155,15 +151,13 @@ public class Meta extends  BaseActivity {
                 db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
 
                 // Mostrar un mensaje o realizar la acción correspondiente
-//                Toast.makeText(Meta.this, "Días récord actualizado: " + diasRecordNuevo, Toast.LENGTH_SHORT).show;
+//            Toast.makeText(Meta.this, "Días récord actualizado: " + diasRecordNuevo, Toast.LENGTH_SHORT).show;
             }
         }
 
-        // Cerrar el cursor y la conexión a la base de datos
+        // Cerrar el cursor
         cursor.close();
-        db.close();
     }
-
 
     // Asegúrate de llamar a dismissDialog() en el onDestroy() o en otro lugar adecuado
     @Override
@@ -171,6 +165,18 @@ public class Meta extends  BaseActivity {
         super.onDestroy();
         dismissDialog();
     }
+
+
+
+
+    // Método para ocultar el cuadro de diálogo
+    private void dismissDialog() {
+        if (alertDialog != null && alertDialog.isShowing()) {
+            alertDialog.dismiss();
+        }
+    }
+
+
 
 
     private void updateBottleImage(float meta,float nuevaLogrado) {

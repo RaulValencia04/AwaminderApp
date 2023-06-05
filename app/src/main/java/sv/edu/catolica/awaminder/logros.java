@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class logros extends AppCompatActivity {
+public class logros extends BaseActivity {
 
     private DbAdmin dbAdmin;
     private TextView tvlogro,tvmeta;
