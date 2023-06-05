@@ -114,37 +114,6 @@
     android:layout_below="@id/llMetaDiaria"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="32dp"
-    android:orientation="vertical">
-
-    <FrameLayout
-        android:layout_width="80dp"
-        android:layout_height="80dp">
-
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/circle_background_light_blue"
-            android:scaleType="fitCenter" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/heart_calendar_icon"
-            android:layout_gravity="center"/>
-
-    </FrameLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Día que más\nagua tomaste"
-        android:textSize="14sp"
-        android:textAllCaps="false"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal" />
-
-</LinearLayout>
+    android:orientation="vertical"/>
 
 </RelativeLayout>
