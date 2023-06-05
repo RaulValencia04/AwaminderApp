@@ -1,15 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Consejos">
-    <EditText
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Consejos cortos para tomar agua"
+        android:textColor="#7209B7"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="consejos">
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginBottom="30dp"
+            android:text="Establece metas de consumo de agua: Define una meta diaria de cuántos vasos o litros de agua deseas consumir."
+            android:textStyle="italic"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:textSize="17sp"
+            android:text="Lleva contigo una botella de agua: Mantén una botella de agua contigo a lo largo del día, ya sea en tu bolso, mochila o en tu escritorio. Esto te recordará beber agua regularmente y facilitará el acceso a ella."
+            android:textStyle="italic"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:textSize="17sp"
+            android:text="Establece recordatorios: Configura recordatorios en tu teléfono o utiliza aplicaciones específicas para recordarte beber agua a intervalos regulares. Esto puede ser especialmente útil si tiendes a olvidarte de beber agua durante el día."
+            android:textStyle="italic"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:textSize="17sp"
+            android:text="Mantén un registro: Lleva un registro de tu consumo de agua para hacer un seguimiento de cuánto estás bebiendo."
+            android:textStyle="italic"
+            />
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

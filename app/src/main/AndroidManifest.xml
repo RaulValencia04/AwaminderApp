@@ -61,7 +61,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+
             android:exported="true" />
+
+
+
         <activity
             android:name=".beneficios"
             android:exported="false" />

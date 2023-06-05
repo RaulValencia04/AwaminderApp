@@ -75,16 +75,20 @@ public class CambiaContra extends AppCompatActivity {
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Obtener la nueva contraseña ingresada por el usuario
                         String nuevaContrasenia = nuevaContraseniaEditText.getText().toString();
 
-                        // Actualizar el registro en la base de datos con la nueva contraseña
-                        ContentValues values = new ContentValues();
-                        values.put("contrasenia", nuevaContrasenia);
-                        db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
+                        if (nuevaContrasenia != null && !nuevaContrasenia.isEmpty()) {
+                            // Actualizar el registro en la base de datos con la nueva contraseña
+                            ContentValues values = new ContentValues();
+                            values.put("contrasenia", nuevaContrasenia);
+                            db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
 
-                        // Mostrar un mensaje de éxito
-                        Toast.makeText(CambiaContra.this, "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show();
+                            // Mostrar un mensaje de éxito
+                            Toast.makeText(CambiaContra.this, "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Mostrar un mensaje de error si la nueva contraseña es nula o vacía
+                            Toast.makeText(CambiaContra.this, "La nueva contraseña no puede estar vacía", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 

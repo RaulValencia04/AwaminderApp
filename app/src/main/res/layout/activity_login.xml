@@ -99,16 +99,19 @@
                     android:textSize="12sp"
                     android:textStyle="italic" />
                 <Button
+
                     android:id="@+id/TVcambiarc"
+
                     android:layout_width="200dp"
                     android:layout_height="49dp"
                     android:background="@android:color/transparent"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
+
                     android:onClick="cambiarCONTRA"
                     android:text="has olvidado tu contraseña?"
-                    android:textColor="@color/black"
-                    android:textSize="10sp"
+                    android:textColor="@color/rosadowinder"
+                    android:textSize="12sp"
                     android:textStyle="italic" />
 
             </LinearLayout>

@@ -4,14 +4,62 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".beneficios">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hola munod"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Beneficios cortos de tomar agua"
+        android:textColor="#7209B7"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
 
-    </TextView>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="20dp"
+       android:orientation="vertical"
+       android:padding="20dp">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="17sp"
+           android:layout_marginBottom="30dp"
+           android:text="Hidratación: El agua ayuda a mantener el equilibrio hídrico en el cuerpo, manteniéndote hidratado y favoreciendo el funcionamiento adecuado de tus órganos y sistemas."
+           android:textStyle="italic"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="30dp"
+           android:textSize="17sp"
+           android:text="Energía y rendimiento: Beber suficiente agua puede aumentar tu energía y mejorar tu rendimiento físico y mental, ya que ayuda a transportar nutrientes y oxígeno a través del cuerpo."
+           android:textStyle="italic"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="30dp"
+           android:textSize="17sp"
+           android:text="Digestión saludable: El agua facilita la digestión adecuada y evita el estreñimiento al mantener los intestinos lubricados y en movimiento."
+           android:textStyle="italic"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="30dp"
+           android:textSize="17sp"
+           android:text="Salud de la piel: Mantener una hidratación adecuada puede mejorar la apariencia y salud de tu piel, manteniéndola hidratada y ayudando a prevenir problemas como la sequedad y la formación de arrugas."
+           android:textStyle="italic"
+           />
+   </LinearLayout>
+
+
 
 </LinearLayout>
