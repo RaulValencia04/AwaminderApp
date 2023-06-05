@@ -7,7 +7,7 @@
         android:title="Consejos"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@android:drawable/ic_menu_agenda"
         />
 
     <item
