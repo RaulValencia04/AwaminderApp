@@ -10,18 +10,33 @@
         android:icon="@android:drawable/btn_star_big_on"
         />
 
+    <item
+        android:id="@+id/hora"
+        android:title="hora"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/presence_away"
+        />
+    <item
+        android:id="@+id/logro"
+        android:title="logros"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/water_drop_icon"
+        />
+
 
     <item
         android:id="@+id/benenficios"
         android:title="Beneficios"
-        android:orderInCategory="4"
+        android:orderInCategory="2"
         app:showAsAction="never"
         android:icon="@android:drawable/checkbox_on_background"
         />
     <item
         android:id="@+id/cerraS"
         android:title="Cerrar sesion"
-        android:orderInCategory="2"
+        android:orderInCategory="4"
         app:showAsAction="never"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         />
