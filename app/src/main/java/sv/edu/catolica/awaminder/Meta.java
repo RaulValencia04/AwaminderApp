@@ -77,7 +77,7 @@ public class Meta extends  BaseActivity {
                 if (nuevaLogrado < 0) {
                     nuevaLogrado = 0;
                 }
-                updateBottleImage(meta, nuevaLogrado);
+                
                 // Formatear los valores con dos decimales
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String tomaCantidad = decimalFormat.format(meta * 0.1f);
