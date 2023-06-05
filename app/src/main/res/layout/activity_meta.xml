@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Meta de hoy!"
+        android:text="@string/meta_de_hoy"
         android:textSize="35sp"
         android:layout_marginTop="10dp"
         />
@@ -24,7 +24,7 @@
             android:layout_height="400dp"/>
     <Button
         android:id="@+id/btnbajar"
-        android:text="TOMAR"
+        android:text="@string/tomar"
          android:onClick="bajar"
 
         android:layout_gravity="center"

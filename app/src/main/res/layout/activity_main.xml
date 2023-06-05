@@ -17,7 +17,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="15dp"
             android:textColor="#ffc7ee"
-            android:text="¡Crear tu cuenta \n nunca fue más fácil!"
+            android:text="@string/crear_tu_cuenta_n_nunca_fue_m_s_f_cil"
             android:layout_height="wrap_content">
 
 
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/black"
-                android:text="Nombre"/>
+                android:text="@string/usuario"/>
             <EditText
                 android:id="@+id/ETnombre"
                 android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:onClick="canmbiarACT"
-                    android:text="Iniciar Sesion"
+                    android:text="@string/iniciar_sesion"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     android:textStyle="italic" />

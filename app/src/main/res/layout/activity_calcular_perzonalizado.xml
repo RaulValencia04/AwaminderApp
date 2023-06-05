@@ -13,7 +13,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="150dp"
-        android:text="Plan personalizado"
+        android:text="@string/plan_personalizado"
         android:textColor="#7209B7"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="-62dp"
             android:layout_marginTop="16dp"
-            android:text="Ingresa tu meta propia"
+            android:text="@string/ingresa_tu_meta_propia"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -44,7 +44,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Ingrese litros"
+            android:hint="@string/ingrese_litros"
             android:inputType="numberDecimal" />
 
         <LinearLayout
@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/round_corner_button"
                 android:onClick="actualizarP"
-                android:text="Calcular" />
+                android:text="@string/calcular" />
 
         </LinearLayout>
 

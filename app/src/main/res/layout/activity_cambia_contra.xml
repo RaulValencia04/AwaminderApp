@@ -18,7 +18,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:textColor="#45c2f4"
-            android:text="No recuerdas tu contraseña !!!"
+            android:text="@string/no_recuerdas_tu_contrase_a"
             android:layout_height="wrap_content">
 
         </TextView>
@@ -37,7 +37,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/black"
-                android:text="Usuario"/>
+                android:text="@string/usuario"/>
             <EditText
                 android:id="@+id/ETnombre"
                 android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                     android:layout_height="52dp"
                     android:onClick="cambiarContrasenia"
                     android:layout_gravity="center"
-                    android:text="verificar existecia"
+                    android:text="@string/verificar_existecia"
                     android:background="@drawable/round_corner_button" />
 
                 <Button
@@ -79,7 +79,7 @@
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:onClick="regresarlogin"
-                    android:text="regresar al login"
+                    android:text="@string/regresar_al_login"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     android:textStyle="italic" />

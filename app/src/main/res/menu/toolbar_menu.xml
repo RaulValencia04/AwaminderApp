@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/add"
-        android:title="Consejos"
+        android:title="@string/consejos"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_menu_agenda"
@@ -12,14 +12,14 @@
 
     <item
         android:id="@+id/hora"
-        android:title="hora"
+        android:title="@string/hora"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/presence_away"
         />
     <item
         android:id="@+id/logro"
-        android:title="logros"
+        android:title="@string/logros"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
         android:icon="@drawable/water_drop_icon"
@@ -28,21 +28,21 @@
 
     <item
         android:id="@+id/benenficios"
-        android:title="Beneficios"
+        android:title="@string/beneficios"
         android:orderInCategory="2"
         app:showAsAction="never"
         android:icon="@android:drawable/checkbox_on_background"
         />
     <item
         android:id="@+id/cerraS"
-        android:title="Cerrar sesion"
+        android:title="@string/cerrar_sesion"
         android:orderInCategory="4"
         app:showAsAction="never"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         />
     <item
         android:id="@+id/changeP"
-        android:title="Cambiar plan"
+        android:title="@string/cambiar_plan"
         android:orderInCategory="2"
         app:showAsAction="never"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"

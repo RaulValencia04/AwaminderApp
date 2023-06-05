@@ -14,7 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:text="Consejos cortos para tomar agua"
+        android:text="@string/consejos_cortos_para_tomar_agua"
         android:textColor="#7209B7"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:layout_marginBottom="30dp"
-            android:text="Establece metas de consumo de agua: Define una meta diaria de cuántos vasos o litros de agua deseas consumir."
+            android:text="@string/consejo1"
             android:textStyle="italic"
             />
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:textSize="17sp"
-            android:text="Lleva contigo una botella de agua: Mantén una botella de agua contigo a lo largo del día, ya sea en tu bolso, mochila o en tu escritorio. Esto te recordará beber agua regularmente y facilitará el acceso a ella."
+            android:text="@string/consejo2"
             android:textStyle="italic"
             />
         <TextView
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:textSize="17sp"
-            android:text="Establece recordatorios: Configura recordatorios en tu teléfono o utiliza aplicaciones específicas para recordarte beber agua a intervalos regulares. Esto puede ser especialmente útil si tiendes a olvidarte de beber agua durante el día."
+            android:text="@string/consejo3"
             android:textStyle="italic"
             />
         <TextView
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:textSize="17sp"
-            android:text="Mantén un registro: Lleva un registro de tu consumo de agua para hacer un seguimiento de cuánto estás bebiendo."
+            android:text="@string/consejo4"
             android:textStyle="italic"
             />
     </LinearLayout>

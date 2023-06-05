@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center_horizontal"
-            android:text="Escoge tu plan!!"
+            android:text="@string/escoge_tu_plan"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -36,7 +36,7 @@
                 android:textColor="@color/black"
                 android:layout_height="75dp"
                 android:onClick="planP"
-                android:text="mi propio plan"
+                android:text="@string/mi_propio_plan"
                 android:background="@drawable/roundedbutton"
                 android:layout_margin="20dp"/>
 
@@ -49,7 +49,7 @@
                 android:layout_margin="20dp"
                 android:background="@drawable/roundedbutton"
                 android:onClick="recomendado"
-                android:text="plan recomendado"/>
+                android:text="@string/plan_recomendado"/>
 
             <Button
                 android:id="@+id/oldPlan"
@@ -60,7 +60,7 @@
                 android:layout_margin="20dp"
                 android:onClick="oldplan"
                 android:background="@drawable/roundedbutton"
-                android:text="ya tengo un plan"/>
+                android:text="@string/ya_tengo_un_plan"/>
 
         </LinearLayout>
 

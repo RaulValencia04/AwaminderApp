@@ -15,7 +15,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="150dp"
-        android:text="Calcular cantidad"
+        android:text="@string/calcular_cantidad"
         android:textColor="#7209B7"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:text="Ingrese su peso"/>
+        android:text="@string/ingrese_su_peso"/>
 
     <EditText
         android:id="@+id/ETpeso"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
-        android:hint="Peso en kilos"
+        android:hint="@string/peso_en_kilos"
         android:inputType="numberDecimal" />
 
     <Button
@@ -54,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:onClick="actualizar"
-        android:text="Guardar"
+        android:text="@string/guardar"
         android:background="@drawable/round_corner_button" />
 
 
