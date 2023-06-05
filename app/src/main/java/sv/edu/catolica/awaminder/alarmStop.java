@@ -70,7 +70,7 @@ public class alarmStop extends AppCompatActivity {
             editor.putBoolean("esActivo", true);
             editor.apply();
 
-            Toast.makeText(alarmStop.this, "hora inicio"+hour+":"+minute+"hora fin"+hourf+":"+minutef, Toast.LENGTH_SHORT).show();
+            Toast.makeText(alarmStop.this, "hora inicio "+hour+":"+minute+" hora fin "+hourf+":"+minutef, Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, Meta.class);
 

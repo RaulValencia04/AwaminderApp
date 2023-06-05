@@ -198,7 +198,7 @@ public class Meta extends  BaseActivity {
         }
         else if (nuevaLogrado ==0 ) {
             bottleImageView.setImageResource(R.drawable.btvacia1);
-            Toast.makeText(Meta.this, "OPAAAA lograste tu meta de hoy", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Meta.this, "Lograste tu meta de hoy", Toast.LENGTH_SHORT).show();
             actualizarDiasRecord();
 
             Intent intent = new Intent(this, plan.class);

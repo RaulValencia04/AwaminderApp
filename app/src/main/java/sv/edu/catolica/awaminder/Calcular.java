@@ -46,7 +46,8 @@ public class Calcular extends AppCompatActivity {
         double meta = peso * 0.03;
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Hola! "+nombre+"\nSu plan es de"+meta+" litros al dia\n\n Esta deacuerdo? ").setTitle("Elija");
+        builder1.setMessage(String.format("Hola! %s\nSu plan es de %.2f litros al día\n\n¿Está de acuerdo?", nombre, meta))
+                .setTitle("Elija");
         builder1.setCancelable(false);
         builder1.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
