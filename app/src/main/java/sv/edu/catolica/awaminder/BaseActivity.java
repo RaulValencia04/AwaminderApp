@@ -16,6 +16,7 @@ public class BaseActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -42,14 +43,13 @@ public class BaseActivity extends AppCompatActivity {
 
             return true;
         }
-//        else if (id == R.id.changeP) {
-//
-//            Intent intent = new Intent(this, plan.class);
-//            startActivity(intent);
-//            finish();
-//
-//            return true;
-//        }
+        else if (id == R.id.benenficios) {
+
+            Intent intent = new Intent(this, beneficios.class);
+            startActivity(intent);
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
