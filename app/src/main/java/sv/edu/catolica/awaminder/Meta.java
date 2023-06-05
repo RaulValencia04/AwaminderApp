@@ -53,7 +53,6 @@ public class Meta extends  BaseActivity {
         });
 
     }
-
     private void decreaseWaterLevel() {
         // Obtener el nombre de usuario guardado en SharedPreferences
         String nombreUsuario = obtenerUsuarioLogueado();
@@ -78,7 +77,7 @@ public class Meta extends  BaseActivity {
                 if (nuevaLogrado < 0) {
                     nuevaLogrado = 0;
                 }
-                updateBottleImage(meta,nuevaLogrado);
+                updateBottleImage(meta, nuevaLogrado);
                 // Formatear los valores con dos decimales
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String tomaCantidad = decimalFormat.format(meta * 0.1f);
@@ -88,7 +87,7 @@ public class Meta extends  BaseActivity {
                 ContentValues values = new ContentValues();
                 values.put("logrado", nuevaLogrado);
                 db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
-//                Toast.makeText(Meta.this, "Toma " + tomaCantidad + " de " + meta, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Meta.this, "Toma " + tomaCantidad + " de " + meta, Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("TOMA " + tomaCantidad + "ML")
@@ -113,24 +112,50 @@ public class Meta extends  BaseActivity {
 
                 }
 
-                updateBottleImage(meta,nuevaLogrado);
+                updateBottleImage(meta, nuevaLogrado);
             }
         }
 
-        // Cerrar el cursor y la conexión a la base de datos
+        // Cerrar el cursor
         cursor.close();
+
+        // Cerrar la conexión a la base de datos después de realizar todas las operaciones necesarias
         db.close();
+
     }
 
+    private void actualizarDiasRecord() {
+        // Obtener el nombre de usuario guardado en SharedPreferences
+        String nombreUsuario = obtenerUsuarioLogueado();
 
-    // Método para ocultar el cuadro de diálogo
-    private void dismissDialog() {
-        if (alertDialog != null && alertDialog.isShowing()) {
-            alertDialog.dismiss();
+        // Obtener una instancia de la base de datos en modo escritura
+        SQLiteDatabase db = dbAdmin.getWritableDatabase();
+
+        // Realizar una consulta para obtener el registro del usuario con el nombre obtenido
+        Cursor cursor = db.query("Usuario", null, "nombre = ?", new String[]{nombreUsuario}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            int diasRecordColumnIndex = cursor.getColumnIndex("DiasRecord");
+
+            // Verificar si la columna existe en el cursor
+            if (diasRecordColumnIndex != -1) {
+                int diasRecordActual = cursor.getInt(diasRecordColumnIndex);
+
+                // Incrementar el valor actual en 1
+                int diasRecordNuevo = diasRecordActual + 1;
+
+                // Actualizar el registro en la base de datos
+                ContentValues values = new ContentValues();
+                values.put("DiasRecord", diasRecordNuevo);
+                db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
+
+                // Mostrar un mensaje o realizar la acción correspondiente
+//            Toast.makeText(Meta.this, "Días récord actualizado: " + diasRecordNuevo, Toast.LENGTH_SHORT).show;
+            }
         }
-    }
-    void meta(){
 
+        // Cerrar el cursor
+        cursor.close();
     }
 
     // Asegúrate de llamar a dismissDialog() en el onDestroy() o en otro lugar adecuado
@@ -139,6 +164,18 @@ public class Meta extends  BaseActivity {
         super.onDestroy();
         dismissDialog();
     }
+
+
+
+
+    // Método para ocultar el cuadro de diálogo
+    private void dismissDialog() {
+        if (alertDialog != null && alertDialog.isShowing()) {
+            alertDialog.dismiss();
+        }
+    }
+
+
 
 
     private void updateBottleImage(float meta,float nuevaLogrado) {
@@ -162,6 +199,10 @@ public class Meta extends  BaseActivity {
         else if (nuevaLogrado ==0 ) {
             bottleImageView.setImageResource(R.drawable.btvacia1);
             Toast.makeText(Meta.this, "OPAAAA lograste tu meta de hoy", Toast.LENGTH_SHORT).show();
+            actualizarDiasRecord();
+
+            Intent intent = new Intent(this, plan.class);
+            startActivity(intent);
         }
     }
     public String obtenerUsuarioLogueado() {

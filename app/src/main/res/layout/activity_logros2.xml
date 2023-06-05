@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".logros">
+
+<!-- Light Blue Wavy Background -->
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/wavy_brackground"
+    android:scaleType="fitXY"
+    android:rotation="45"
+    android:alpha="0.5"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true" />
+
+<TextView
+    android:id="@+id/tvLogros"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Logros"
+    android:layout_centerHorizontal="true"
+    android:padding="60dp"
+    android:textSize="24sp" />
+
+<LinearLayout
+    android:id="@+id/llRachaDias"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvLogros"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_background_light_blue"
+            android:scaleType="fitCenter" />
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/calendar_icon"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/racha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Racha de días"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/llMetaDiaria"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/llRachaDias"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="32dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_background_light_blue"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/water_drop_icon"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/meta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meta diaria"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/llDiaMasAgua"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/llMetaDiaria"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="32dp"
+    android:orientation="vertical"/>
+
+</RelativeLayout>
