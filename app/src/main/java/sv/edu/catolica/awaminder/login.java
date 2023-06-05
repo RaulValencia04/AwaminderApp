@@ -118,4 +118,12 @@ public class login extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void cambiarCONTRA(View view) {
+
+        Intent intent = new Intent(this, CambiaContra.class);
+        startActivity(intent);
+
+
+    }
 }

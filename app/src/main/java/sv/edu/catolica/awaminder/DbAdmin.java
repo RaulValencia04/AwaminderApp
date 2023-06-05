@@ -29,7 +29,7 @@ public class DbAdmin extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableQuery = "CREATE TABLE " + TABLE_NAME + "(" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NOMBRE + " TEXT, " +
+                COLUMN_NOMBRE + " TEXT UNIQUE, " +
                 COLUMN_CORREO + " TEXT, " +
                 COLUMN_CONTRASENIA + " TEXT, " +
                 COLUMN_PESO + " REAL, " +
