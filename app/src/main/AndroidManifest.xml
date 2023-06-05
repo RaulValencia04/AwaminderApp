@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,7 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AwaMinder"
         tools:targetApi="31">
-
+        <activity
+            android:name=".logros"
+            android:exported="false" />
+        <activity
+            android:name=".alarmStop"
+            android:exported="false" />
         <activity
             android:name=".login"
             android:exported="true">
@@ -25,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Calcular_Perzonalizado"
             android:exported="false" />
@@ -41,17 +46,12 @@
         <activity
             android:name=".Calcular"
             android:exported="false" />
-
         <activity
             android:name=".plan"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
-
-        
-
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -9,6 +9,20 @@
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/btn_star_big_on"
         />
+    <item
+        android:id="@+id/hora"
+        android:title="hora"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/presence_away"
+        />
+    <item
+        android:id="@+id/logro"
+        android:title="logros"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/water_drop_icon"
+        />
 
 
     <item

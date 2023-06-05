@@ -129,9 +129,41 @@ public class Meta extends  BaseActivity {
             alertDialog.dismiss();
         }
     }
-    void meta(){
+    private void actualizarDiasRecord() {
+        // Obtener el nombre de usuario guardado en SharedPreferences
+        String nombreUsuario = obtenerUsuarioLogueado();
 
+        // Obtener una instancia de la base de datos en modo escritura
+        SQLiteDatabase db = dbAdmin.getWritableDatabase();
+
+        // Realizar una consulta para obtener el registro del usuario con el nombre obtenido
+        Cursor cursor = db.query("Usuario", null, "nombre = ?", new String[]{nombreUsuario}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            int diasRecordColumnIndex = cursor.getColumnIndex("DiasRecord");
+
+            // Verificar si la columna existe en el cursor
+            if (diasRecordColumnIndex != -1) {
+                int diasRecordActual = cursor.getInt(diasRecordColumnIndex);
+
+                // Incrementar el valor actual en 1
+                int diasRecordNuevo = diasRecordActual + 1;
+
+                // Actualizar el registro en la base de datos
+                ContentValues values = new ContentValues();
+                values.put("DiasRecord", diasRecordNuevo);
+                db.update("Usuario", values, "nombre = ?", new String[]{nombreUsuario});
+
+                // Mostrar un mensaje o realizar la acción correspondiente
+//                Toast.makeText(Meta.this, "Días récord actualizado: " + diasRecordNuevo, Toast.LENGTH_SHORT).show;
+            }
+        }
+
+        // Cerrar el cursor y la conexión a la base de datos
+        cursor.close();
+        db.close();
     }
+
 
     // Asegúrate de llamar a dismissDialog() en el onDestroy() o en otro lugar adecuado
     @Override
@@ -162,6 +194,7 @@ public class Meta extends  BaseActivity {
         else if (nuevaLogrado ==0 ) {
             bottleImageView.setImageResource(R.drawable.btvacia1);
             Toast.makeText(Meta.this, "OPAAAA lograste tu meta de hoy", Toast.LENGTH_SHORT).show();
+            actualizarDiasRecord();
         }
     }
     public String obtenerUsuarioLogueado() {

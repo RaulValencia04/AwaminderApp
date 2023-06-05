@@ -42,14 +42,22 @@ public class BaseActivity extends AppCompatActivity {
 
             return true;
         }
-//        else if (id == R.id.changeP) {
-//
-//            Intent intent = new Intent(this, plan.class);
-//            startActivity(intent);
-//            finish();
-//
-//            return true;
-//        }
+        else if (id == R.id.hora) {
+
+            Intent intent = new Intent(this, alarmStop.class);
+            startActivity(intent);
+            finish();
+
+            return true;
+        }
+        else if (id == R.id.logro) {
+
+            Intent intent = new Intent(this, logros.class);
+            startActivity(intent);
+
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

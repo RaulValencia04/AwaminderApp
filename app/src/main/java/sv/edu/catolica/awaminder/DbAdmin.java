@@ -19,6 +19,8 @@ public class DbAdmin extends SQLiteOpenHelper {
     private static final String COLUMN_META = "meta";
     private static final String COLUMN_LOGRADO = "logrado";
 
+
+
     public DbAdmin(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -35,6 +37,7 @@ public class DbAdmin extends SQLiteOpenHelper {
                 COLUMN_DIAS_RECORD + " INTEGER, " +
                 COLUMN_META + " REAL)";
         db.execSQL(createTableQuery);
+
     }
 
     @Override

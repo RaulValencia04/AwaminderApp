@@ -27,6 +27,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,10 @@ public class AlarmNotification extends Service {
          float nuevaLogrado;
         private Handler handler;
         private Runnable runnable;
+
+        private Handler handler1;
+        private Runnable runnable1;
+    private final static long INTERVAL_30_SECONDS = 30 * 1000;
         private final static String CHANNEL_ID = "NOTIFICACIONs";
     private static final long INTERVAL_24_HOURS = TimeUnit.HOURS.toMillis(24);
         private final static int NOTIFICACION_ID = 1;
@@ -49,17 +54,65 @@ public class AlarmNotification extends Service {
             dbAdmin  = new DbAdmin(AlarmNotification.this,"AwaMinder",null,1);
 
             // Inicia el temporizador para ejecutar el código cada cierto intervalo de tiempo
+            // Ejecuta el código cada minuto (60000 milisegundos)
+
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
-                    createNotificationChannel();
-                    createNotification();
+                    verificarHoras();
+//                     createNotificationChannel();
+//                    createNotification();
                 }
-            }, 0, 60000); // Ejecuta el código cada minuto (60000 milisegundos)
+            }, 0, 10000); // Ejecuta el código cada minuto (60000 milisegundos)
 
             return START_STICKY;
         }
+
+
+    public void verificarHoras() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MiArchivoPref", Context.MODE_PRIVATE);
+        String horaInicio = sharedPreferences.getString("hora_inicio", "");
+        String horaFin = sharedPreferences.getString("hora_fin", "");
+        boolean esActivo = sharedPreferences.getBoolean("esActivo",true );
+
+        if (esActivo) {
+            if (horaInicio == null || horaInicio.isEmpty() || horaFin == null || horaFin.isEmpty()) {
+                // Las horas no están guardadas correctamente, pero el estado es activo
+                createNotificationChannel();
+                createNotification();
+            } else {
+                // Obtener la hora actual
+                int horaActualEnMinutos = obtenerHoraActualEnMinutos();
+
+                // Convertir las horas de inicio y fin a minutos para facilitar la comparación
+                int horaInicioEnMinutos = convertirHoraEnMinutos(horaInicio);
+                int horaFinEnMinutos = convertirHoraEnMinutos(horaFin);
+
+                if (horaActualEnMinutos >= horaInicioEnMinutos && horaActualEnMinutos <= horaFinEnMinutos) {
+                    createNotificationChannel();
+                    createNotification();
+                }
+            }
+        }
+    }
+
+    private int obtenerHoraActualEnMinutos() {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        return hour * 60 + minute;
+    }
+
+
+    private int convertirHoraEnMinutos(String hora) {
+        String[] partes = hora.split(":");
+        int hour = Integer.parseInt(partes[0]);
+        int minute = Integer.parseInt(partes[1]);
+        return hour * 60 + minute;
+    }
+
+
         public void onCreate() {
             super.onCreate();
 

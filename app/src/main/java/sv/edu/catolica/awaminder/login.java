@@ -28,6 +28,11 @@ public class login extends AppCompatActivity {
 
         if (obtenerUsuarioLogueadoBool()) {
             // Si hay un nombre de usuario, iniciar la actividad Meta
+            Intent intent = new Intent(this, plan.class);
+            // Iniciar la nueva actividad
+            startService(new Intent(login.this, AlarmNotification.class));
+            startActivity(intent);
+            finish();
             iniciarActividadMeta();
         }
 
